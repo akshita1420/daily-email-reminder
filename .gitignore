@@ -1,39 +1,49 @@
-HELP.md
-target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# ========================================
+# Java / Maven / Spring Boot Project
+# ========================================
 
-### STS ###
-.apt_generated
+# Maven target build directory
+/target
+*.class
+*.log
+
+# Maven wrapper files
+.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+# Application properties (optional: if you want to hide local config)
+# /src/main/resources/application.properties
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse / STS
 .classpath
-.factorypath
 .project
-.settings
+.settings/
+.apt_generated
+.factorypath
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-/target
-*.log
-*.class
-/.idea
-*.properties
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
 .env
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Build directories
+/build/
+/out/
