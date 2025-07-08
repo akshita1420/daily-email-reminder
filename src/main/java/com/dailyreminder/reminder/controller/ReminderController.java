@@ -16,11 +16,20 @@ public class ReminderController {
     private ReminderService reminderService;
 
     @PostMapping
-    public Reminder addReminder(@RequestBody Reminder reminder){
-         return reminderService.save(reminder);
+    public Reminder addReminder(@RequestBody Reminder reminder) {
+        return reminderService.save(reminder);
     }
+
     @GetMapping
-    public List<Reminder> getAllReminder(){
+    public List<Reminder> getAllReminder() {
         return reminderService.getAll();
+    }
+
+
+
+    @GetMapping("/trigger")
+    public String triggerManually() {
+        reminderService.sendReminderEmails();
+        return "Triggered manually!";
     }
 }

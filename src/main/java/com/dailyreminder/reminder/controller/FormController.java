@@ -26,15 +26,15 @@ public class FormController {
     public String submitForm(@RequestParam String email,
                              @RequestParam String message,
                              @RequestParam String time,
-                             @RequestParam int days,                 // ✅ NEW: Get "days" input
+                             @RequestParam int days,
                              Model model) {
 
         Reminder reminder = new Reminder();
         reminder.setEmail(email);
         reminder.setMessage(message);
         reminder.setTime(LocalTime.parse(time));
-        reminder.setRemainingDays(days);                             // ✅ NEW: Save to object
-        reminder.setSent(false);                                     // Optional, if still used
+        reminder.setRemainingDays(days);
+        reminder.setSent(false);
 
         reminderService.save(reminder);
         model.addAttribute("success", true);
