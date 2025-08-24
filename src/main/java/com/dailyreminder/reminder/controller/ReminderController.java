@@ -25,8 +25,6 @@ public class ReminderController {
         return reminderService.getAll();
     }
 
-
-
     @GetMapping("/trigger")
     public String triggerManually() {
         reminderService.sendReminderEmails();
